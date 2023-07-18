@@ -1,0 +1,38 @@
+cpf= str(input('Digite o CPF de preferencia: '))
+nove= cpf[:9]
+i=0
+x=11
+calculo=0
+z=0
+conta=int(0)
+while i <= 8:
+    x -= 1
+    z= int(nove[i])
+    conta = x* z
+    i += 1
+    calculo += conta
+calculo *= 10
+calculo = calculo%11
+resultado= calculo if calculo%11 <= 9 else 0
+
+dez= cpf[:10]
+i=0
+x=12
+calculo2=0
+z=0
+conta=int(0)
+while i <= 9:
+    x -= 1
+    z= int(dez[i])
+    conta = x* z
+    i += 1
+    calculo2 += conta
+calculo2 *= 10
+calculo2 = calculo2%11
+resultado= calculo2 if calculo2%11 <= 9 else 0
+cpf_confirmado=f'{nove}{calculo}{calculo2}'
+
+if cpf == cpf_confirmado:
+    print(f'{cpf} é VALIDO')
+else:
+    print(f'{cpf} é INVALIDO')
